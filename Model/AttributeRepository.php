@@ -46,12 +46,15 @@ class AttributeRepository implements AttributeRepositoryInterface
         }
 
         $storeId = $this->storeManagerInterface->getStore()->getId();
-        $source = $magentoAttribute->getSource()->getAllOptions();
+        $options = $magentoAttribute->getSource()->getAllOptions();
 
-        /** Todo: move to atributefactory */
+        /** @var \Magento\Eav\Api\Data\AttributeInterface $magentoAdminAttribute */
+        $magentoAdminAttribute = $this->eavConfig->getAttribute( \Magento\Catalog\Model\Product::ENTITY, $attributeCode)->setStoreId(0);
+
+        /** Todo: move to attributefactory */
         $attribute = new Attribute();
-        $attribute->code = $magentoAttribute->getAttributeCode();
-        $attribute->value = (string) $source[$storeId]['label'];
+        $attribute->code = $magentoAdminAttribute->getSource()->getOptionText($magentoAdminAttribute->getDefaultValue());
+        $attribute->value = (string) $options[$storeId]['label'];
 
         return $attribute;
     }
