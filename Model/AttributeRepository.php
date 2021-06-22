@@ -42,7 +42,7 @@ class AttributeRepository implements AttributeRepositoryInterface
             );
         }
         if ($magentoAttribute->getFrontendInput() !== 'select') {
-            throw new \Exception(__('The attribute code is not an input type, only input types are provided'));
+            throw new \Exception( (string) __('The attribute code is not an input type, only select input types are provided'));
         }
 
         $storeId = $this->storeManagerInterface->getStore()->getId();
