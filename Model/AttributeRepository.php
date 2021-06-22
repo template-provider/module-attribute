@@ -54,7 +54,7 @@ class AttributeRepository implements AttributeRepositoryInterface
         /** Todo: move to attributefactory */
         $attribute = new Attribute();
         $attribute->code = $magentoAdminAttribute->getSource()->getOptionText($magentoAdminAttribute->getDefaultValue());
-        $attribute->value = (string) $options[$storeId]['label'];
+        $attribute->value = (string) $options[1]['label'];
 
         return $attribute;
     }
