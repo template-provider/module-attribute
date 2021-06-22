@@ -15,3 +15,7 @@ The endpoint of the api is V1/eav/attribute/:attributeCode
 The attributeCode variable is the attribute code of the magento input select
 
 
+### Todo
+- Add Unit Tests
+- Provide Factory for Attribute
+
