@@ -1,0 +1,20 @@
+{
+    "name": "template-provider/module-attribute",
+    "description": "Attribute",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": "~7.4.0"
+    },
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "TemplateProvider\\Attribute\\": ""
+        }
+    },
+    "version": "1.0.0"
+}
